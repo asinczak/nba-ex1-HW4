@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h2>NBA Players</h2>
+
+<table border="1">
+    <tr>
+
+        <th>Id</th>
+        <th>First name</th>
+        <th>Height feet</th>
+        <th>Height inches</th>
+        <th>Last name</th>
+        <th>Position</th>
+        <th>Team</th>
+        <th>Weight pounds</th>
+
+    </tr>
+
+    <tr th:each="player:${players}">
+        <td th:text="${player.getId()}">Id</td>
+        <td th:text="${player.getFirstName()}">First name</td>
+        <td th:text="${player.getHeightFeet()}">Height feet</td>
+        <td th:text="${player.getHeightInches()}">Height inches</td>
+        <td th:text="${player.getLastName()}">Last name</td>
+        <td th:text="${player.getPosition()}">Position</td>
+        <td th:text="${player.getTeam().getFullName()}">Team</td>
+        <td th:text="${player.getWeightPounds()}">Weight pounds</td>
+    </tr>
+</table>
+
+
+<!--<tr th:each="car:${cars}">-->
+<!--    <td th:text="${car.getMark()}"/><br>-->
+<!--    <td th:text="${car.getModel()}"/><br>-->
+<!--    <td th:text="${car.getColour()}"/><br>-->
+<!--    <td th:text="${car.getId()}"/><br>-->
+<!--    <p>=====================</p>-->
+<!--</tr>-->
+
+</body>
+</html>
